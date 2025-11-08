@@ -26,6 +26,8 @@
       <nav id="primaryNav" class="nav-links" role="navigation">
         <a href="#home">Home</a>
         <a href="#services">Services</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#faq">FAQ</a>
         <a href="#about">About</a>
         <a href="#contact" class="nav-cta">Contact</a>
       </nav>
@@ -33,6 +35,7 @@
   </header>
 
   <main id="home">
+    <!-- Hero -->
     <section class="hero page-section">
       <div class="hero-grid">
         <div class="hero-copy">
@@ -51,11 +54,12 @@
       </div>
     </section>
 
+    <!-- Services -->
     <section id="services" class="page-section">
       <header class="section-header">
         <span class="section-eyebrow">What we do</span>
         <h2>Core Services</h2>
-        <p class="content-narrow">End‑to‑end regulatory and brand support for launch‑ready beauty products in the EU and UK.</p>
+        <p class="content-narrow">End-to-end regulatory and brand support for launch-ready beauty products in the EU and UK.</p>
       </header>
 
       <div class="cards-grid">
@@ -89,7 +93,7 @@
 
         <article class="card">
           <div class="card-icon">BRD</div>
-          <h3>Claims &amp; Branding</h3>
+          <h3>Claims & Branding</h3>
           <p>Marketing language aligned with cosmetics law: “vegan”, “dermatologist tested”, etc.</p>
           <a href="#contact" class="card-link">Review my claims →</a>
         </article>
@@ -97,22 +101,116 @@
         <article class="card">
           <div class="card-icon">EXP</div>
           <h3>Expansion Roadmap</h3>
-          <p>Step‑by‑step launch strategy for EU/UK retail and e‑commerce scale‑up.</p>
+          <p>Step-by-step launch strategy for EU/UK retail and e-commerce scale-up.</p>
           <a href="#contact" class="card-link">Plan my launch →</a>
         </article>
       </div>
     </section>
 
+    <!-- Testimonials -->
+    <section id="testimonials" class="page-section">
+      <header class="section-header">
+        <span class="section-eyebrow">What clients say</span>
+        <h2>Testimonials</h2>
+        <p class="content-narrow">Real outcomes from founders navigating EU/UK entry.</p>
+      </header>
+
+      <div class="testimonials-grid">
+        <figure class="testimonial">
+          <blockquote>
+            “Hamdah guided our PIF and CPSR in record time. Their feedback on labeling saved us weeks before retail launch.”
+          </blockquote>
+          <figcaption>
+            <span class="t-name">Amina K.</span>
+            <span class="t-role">Founder, Luma Beauty</span>
+          </figcaption>
+        </figure>
+
+        <figure class="testimonial">
+          <blockquote>
+            “Clear steps, zero jargon. The RP onboarding and ISO&nbsp;22716 playbook gave our team structure and confidence.”
+          </blockquote>
+          <figcaption>
+            <span class="t-name">Daniel R.</span>
+            <span class="t-role">Operations Lead, Nordic Skin Lab</span>
+          </figcaption>
+        </figure>
+
+        <figure class="testimonial">
+          <blockquote>
+            “They reviewed our claims language and prevented costly relabeling. Exactly the partner we needed.”
+          </blockquote>
+          <figcaption>
+            <span class="t-name">Sofia M.</span>
+            <span class="t-role">Brand Manager, Verde Organics</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="page-section">
+      <header class="section-header">
+        <span class="section-eyebrow">Need answers?</span>
+        <h2>Frequently Asked Questions</h2>
+        <p class="content-narrow">Quick answers about EU/UK compliance and our process.</p>
+      </header>
+
+      <div class="accordion" role="region" aria-label="FAQ">
+        <div class="acc-item">
+          <button class="acc-button" aria-expanded="false" aria-controls="faq1" id="faq1-btn">
+            Do I need an EU and a UK Responsible Person?
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 4v12M4 10h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+          <div class="acc-panel" id="faq1" role="region" aria-labelledby="faq1-btn">
+            <p>Yes—EU and UK are separate markets post-Brexit. You need an appointed RP for each jurisdiction to place products legally on the market.</p>
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-button" aria-expanded="false" aria-controls="faq2" id="faq2-btn">
+            What goes into a Product Information File (PIF)?
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 4v12M4 10h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+          <div class="acc-panel" id="faq2" role="region" aria-labelledby="faq2-btn">
+            <p>A PIF typically includes CPSR, formula and material data, stability/micro testing, labeling and claims assessment, and GMP documentation.</p>
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-button" aria-expanded="false" aria-controls="faq3" id="faq3-btn">
+            How long does RP onboarding and PIF preparation take?
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 4v12M4 10h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+          <div class="acc-panel" id="faq3" role="region" aria-labelledby="faq3-btn">
+            <p>Timelines vary by data completeness, but founders typically plan 3–8 weeks for RP onboarding, formula review, and safety documentation.</p>
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-button" aria-expanded="false" aria-controls="faq4" id="faq4-btn">
+            Can you review our marketing claims for compliance?
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 4v12M4 10h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+          <div class="acc-panel" id="faq4" role="region" aria-labelledby="faq4-btn">
+            <p>Absolutely. We assess terms like “vegan,” “dermatologist tested,” and “clean” against evidence requirements and local law expectations.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
     <section id="about" class="page-section">
       <header class="section-header">
         <span class="section-eyebrow">Who we are</span>
         <h2>About Us</h2>
       </header>
       <div class="content-narrow">
-        <p>We bridge regulatory rigor with founder‑friendly execution. Our team supports indie brands to enter new markets faster—without sacrificing safety or identity.</p>
+        <p>We bridge regulatory rigor with founder-friendly execution. Our team supports indie brands to enter new markets faster—without sacrificing safety or identity.</p>
       </div>
     </section>
 
+    <!-- Contact -->
     <section id="contact" class="page-section">
       <header class="section-header">
         <span class="section-eyebrow">Next step</span>
@@ -157,7 +255,7 @@
     </div>
   </footer>
 
-  <!-- EmailJS SDK (no backend required) -->
+  <!-- EmailJS SDK -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="script.js"></script>
 </body>
