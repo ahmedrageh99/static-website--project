@@ -54,7 +54,7 @@ form.addEventListener('submit', async (e) => {
   };
 
   // ✅ Your real EmailJS values
-  const SERVICE_ID = 'service_bcieW8v';
+  const SERVICE_ID = 'service_235hn4p';
   const TEMPLATE_ID = 'template_3fe2f8g';
 
   try {
