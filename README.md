@@ -1,35 +1,58 @@
-# Static Website Project — Phase 2
-Professional, responsive, static site with **EmailJS** contact form (no backend).
+# Hamdah Consulting Unit – EU/UK Cosmetics Compliance & Brand Advisory  
+**From Vision to Compliant Reality**
 
-## How to run locally
-1. Open `index.html` in your browser (no build step needed).
+A modern, responsive, and professional front-end website built for **Hamdah Consulting Unit**, a UK-based cosmetics regulatory and brand advisory firm. This project showcases end-to-end front-end development skills, clean UI/UX design, accessibility, EmailJS integration, and GitHub Pages deployment.
 
-## EmailJS setup (required for functional form)
-1. Create an account at EmailJS.
-2. Add an Email Service (e.g., Gmail or SMTP) — note your **Service ID**.
-3. Create a Template with fields: `from_name`, `reply_to`, `subject`, `message` — note your **Template ID**.
-4. Go to Account → API Keys and copy your **Public Key**.
-5. In `script.js`, replace:
-   - `YOUR_PUBLIC_KEY` with your Public Key
-   - `YOUR_SERVICE_ID` with your Service ID
-   - `YOUR_TEMPLATE_ID` with your Template ID
-6. Save and reload. Submit the form to test — you should see a success message and receive the email.
+---
 
-## Deploy to GitHub Pages
-1. Create a new repo (e.g., `static-website-project`) and push these files.
-2. In GitHub:
-   - Settings → Pages → Build and deployment
-   - Source: **Deploy from a branch**
-   - Branch: `main` (root), Save.
-3. Your live link will look like:
-   `https://yourname.github.io/static-website-project/`
+## 🌐 Live Demo  
+**Website:** https://ahmedrageh99.github.io/static-website--project/
 
-## Deliverables checklist
-- [x] Fully designed, static, responsive site
-- [x] Functional EmailJS contact form (validated)
-- [x] GitHub repository
-- [x] Live deployment link
+---
 
-## Notes
-- Replace images or SVGs in `/assets` with your brand images if you prefer.
-- Keep colors consistent with brand guidelines.
+## 📌 Project Overview  
+This website highlights Hamdah Consulting Unit’s full suite of EU/UK regulatory and brand advisory services, including:
+
+- Responsible Person (RP) Services  
+- PIF & CPSR Support  
+- ISO 22716 Guidance  
+- Safety & Stability Testing  
+- Claims & Branding  
+- Expansion Roadmaps  
+
+### Interactive sections include:
+
+✅ Mobile-friendly navigation  
+✅ Hero banner with CTAs  
+✅ Services grid  
+✅ About section  
+✅ Testimonials  
+✅ FAQ accordion  
+✅ Contact form with EmailJS  
+✅ Auto-updating footer year  
+
+---
+
+## 🛠️ Technologies Used  
+
+### **Front-End**
+- HTML5  
+- CSS3 (responsive utilities, gradients, flexbox, grid)  
+- JavaScript (Vanilla JS)  
+
+### **Tools & Integrations**
+- EmailJS for sending form submissions  
+- GitHub Pages for hosting  
+- Visual Studio Code  
+
+---
+
+## 📧 EmailJS Integration  
+
+The contact form uses **EmailJS** to send messages without a backend.
+
+```javascript
+emailjs.init("MGForec9cCOM_7orJ");
+
+const SERVICE_ID = "service_235hn4p";
+const TEMPLATE_ID = "template_3fe2f8g";
