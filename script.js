@@ -9,9 +9,8 @@ mobileToggle.addEventListener('click', () => {
 /* Footer year */
 document.getElementById('year').textContent = new Date().getFullYear();
 
-/* EmailJS init — replace YOUR_PUBLIC_KEY with your EmailJS Public Key */
-// eslint-disable-next-line no-undef
-emailjs.init('YOUR_PUBLIC_KEY');
+/* EmailJS init — your real public key */
+emailjs.init('MGForec9CcOM_7orJ');
 
 /* Form validation + EmailJS send */
 const form = document.getElementById('contactForm');
@@ -29,7 +28,10 @@ function validate() {
   const subject = form.subject.value.trim();
   const message = form.message.value.trim();
 
-  setError('name', ''); setError('email', ''); setError('subject', ''); setError('message', '');
+  setError('name', ''); 
+  setError('email', ''); 
+  setError('subject', ''); 
+  setError('message', '');
 
   if (name.length < 2) { setError('name', 'Please enter your full name.'); ok = false; }
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { setError('email', 'Enter a valid email address.'); ok = false; }
@@ -51,17 +53,16 @@ form.addEventListener('submit', async (e) => {
     message: form.message.value.trim(),
   };
 
-  // Replace SERVICE_ID and TEMPLATE_ID with your EmailJS values
-  const SERVICE_ID = 'YOUR_SERVICE_ID';
-  const TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
+  // ✅ Your real EmailJS values
+  const SERVICE_ID = 'service_bcieW8v';
+  const TEMPLATE_ID = 'template_3fe2f8g';
 
   try {
-    // eslint-disable-next-line no-undef
     await emailjs.send(SERVICE_ID, TEMPLATE_ID, params);
     form.reset();
-    statusEl.textContent = '✅ Message sent! Please check your email for confirmation.';
+    statusEl.textContent = '✅ Message sent! Please check your email.';
   } catch (err) {
     console.error(err);
-    statusEl.textContent = '❌ Sorry, something went wrong. Please try again later.';
+    statusEl.textContent = '❌ Something went wrong. Please try again later.';
   }
 });
