@@ -9,7 +9,8 @@ mobileToggle.addEventListener('click', () => {
 /* Footer year */
 document.getElementById('year').textContent = new Date().getFullYear();
 
-/* EmailJS init — your real public key */
+/* EmailJS init — using your PUBLIC KEY (safe to expose) */
+// eslint-disable-next-line no-undef
 emailjs.init('MGForec9CcOM_7orJ');
 
 /* Form validation + EmailJS send */
@@ -33,10 +34,25 @@ function validate() {
   setError('subject', ''); 
   setError('message', '');
 
-  if (name.length < 2) { setError('name', 'Please enter your full name.'); ok = false; }
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { setError('email', 'Enter a valid email address.'); ok = false; }
-  if (subject.length < 3) { setError('subject', 'Subject must be at least 3 characters.'); ok = false; }
-  if (message.length < 10) { setError('message', 'Message must be at least 10 characters.'); ok = false; }
+  if (name.length < 2) {
+    setError('name', 'Please enter your full name.');
+    ok = false;
+  }
+
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    setError('email', 'Enter a valid email address.');
+    ok = false;
+  }
+
+  if (subject.length < 3) {
+    setError('subject', 'Subject must be at least 3 characters.');
+    ok = false;
+  }
+
+  if (message.length < 10) {
+    setError('message', 'Message must be at least 10 characters.');
+    ok = false;
+  }
 
   return ok;
 }
@@ -44,6 +60,7 @@ function validate() {
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
   statusEl.textContent = '';
+  
   if (!validate()) return;
 
   const params = {
@@ -53,16 +70,17 @@ form.addEventListener('submit', async (e) => {
     message: form.message.value.trim(),
   };
 
-  // ✅ Your real EmailJS values
+  // ✅ Your updated EmailJS IDs
   const SERVICE_ID = 'service_235hn4p';
   const TEMPLATE_ID = 'template_3fe2f8g';
 
   try {
+    // eslint-disable-next-line no-undef
     await emailjs.send(SERVICE_ID, TEMPLATE_ID, params);
     form.reset();
-    statusEl.textContent = '✅ Message sent! Please check your email.';
+    statusEl.textContent = '✅ Message sent! Please check your email for confirmation.';
   } catch (err) {
     console.error(err);
-    statusEl.textContent = '❌ Something went wrong. Please try again later.';
+    statusEl.textContent = '❌ Sorry, something went wrong. Please try again later.';
   }
 });
