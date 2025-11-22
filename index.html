@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -1105,6 +1105,12 @@
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
   <script>
+    // === EmailJS keys inserted from your message ===
+    // NOTE: Never expose PRIVATE KEY in client code. Only PUBLIC KEY is used by EmailJS in the browser.
+    const PUBLIC_KEY  = "MGForec9CcOM_7orJ";     // from your "API Key"
+    const SERVICE_ID  = "service_235hn4p";        // from your "service Key"
+    const TEMPLATE_ID = "template_YOUR_ID_HERE";  // you still need to paste your real Template ID here
+
     // FAQ collapse logic
     document.addEventListener("DOMContentLoaded", function () {
       const faqItems = document.querySelectorAll(".faq-item");
@@ -1126,12 +1132,7 @@
       // EmailJS contact form
       const form = document.getElementById("contact-form");
       if (form) {
-        // TODO: replace with your actual public key, service ID, and template ID from EmailJS dashboard.
-        const PUBLIC_KEY = "YOUR_PUBLIC_KEY";
-        const SERVICE_ID = "YOUR_SERVICE_ID";
-        const TEMPLATE_ID = "YOUR_TEMPLATE_ID";
-
-        if (window.emailjs && PUBLIC_KEY !== "YOUR_PUBLIC_KEY") {
+        if (window.emailjs && PUBLIC_KEY && PUBLIC_KEY !== "YOUR_PUBLIC_KEY") {
           emailjs.init(PUBLIC_KEY);
         }
 
@@ -1141,10 +1142,9 @@
           status.textContent = "Sending...";
           status.style.color = "#4b5563";
 
-          if (!window.emailjs || PUBLIC_KEY === "YOUR_PUBLIC_KEY") {
-            // Developer mode message if keys not yet configured
+          if (!window.emailjs || !PUBLIC_KEY || !SERVICE_ID || !TEMPLATE_ID || TEMPLATE_ID.includes("YOUR_ID_HERE")) {
             status.textContent =
-              "EmailJS keys are not configured yet. Please add your PUBLIC_KEY, SERVICE_ID, and TEMPLATE_ID in the script.";
+              "EmailJS keys are not fully configured yet. Please add your PUBLIC_KEY, SERVICE_ID, and TEMPLATE_ID (real ID) in the script.";
             status.style.color = "#b91c1c";
             return;
           }
@@ -1152,13 +1152,12 @@
           emailjs
             .sendForm(SERVICE_ID, TEMPLATE_ID, this)
             .then(function () {
-              // Success message as requested by supervisor
               status.textContent = "Your message has been sent successfully!";
               status.style.color = "#15803d";
               form.reset();
             })
-            .catch(function () {
-              // Error message as requested by supervisor
+            .catch(function (err) {
+              console.error(err);
               status.textContent = "Oops! Something went wrong. Please try again.";
               status.style.color = "#b91c1c";
             });
